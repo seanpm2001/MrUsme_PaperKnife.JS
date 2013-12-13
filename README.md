@@ -10,7 +10,13 @@ Include *paperknife.js* into your web project. *paperknife.peg.js* is the PEG.js
 
 ```javascript
 var splittedData = paperKnife.parse('Marius <marius@twostairs.com>');
-console.log(splittedData);
+JSON.stringify(splittedData);
+```
+
+Result:
+
+```json
+"[[{"type":"displayname","value":"Marius"},{"type":"localpart","value":"marius"},{"type":"domain","value":"twostairs.com"},{}]]"
 ```
 
 That's basically it. :-)
