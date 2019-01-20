@@ -1,6 +1,6 @@
 {
   "name": "@twostairs/paperknife",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "paperknife.js is a RFC 2822 compliant e-mail address parser/validator developed with PEG.js.",
   "main": "paperknife.js",
   "scripts": {
