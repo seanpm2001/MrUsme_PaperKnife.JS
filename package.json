@@ -5,7 +5,9 @@
   "main": "paperknife.js",
   "scripts": {
     "compile": "pegjs -o paperknife.js paperknife.pegjs",
-    "test": "ava"
+    "test": "ava",
+    "release": "npm run compile && npm run test && npm version patch && git push --all && git push --tags",
+    "update": "ncu -au && npm install && npm run compile && npm run test"
   },
   "ava": {
     "verbose": true
