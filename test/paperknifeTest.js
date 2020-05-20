@@ -7,24 +7,24 @@ test('Paperknife.parse is available', async (t) => {
 
 test('Paperknife.parse validates correct mail addresses successfully', async (t) => {
     t.deepEqual(Paperknife.parse('"Marius M." <marius@twostairs.co>'), [
-	    [
-			{
-				type: 'displayname',
-				value: 'Marius M.',
-			},
-			{
-				type: 'localpart',
-				value: 'marius',
-			},
-			{
-				type: 'domain',
-				value: 'twostairs.co',
-			},
-			{}
-	    ]
-  	]);
+        [
+            {
+                type: 'displayname',
+                value: 'Marius M.',
+            },
+            {
+                type: 'localpart',
+                value: 'marius',
+            },
+            {
+                type: 'domain',
+                value: 'twostairs.co',
+            },
+            {}
+        ]
+    ]);
 });
 
 test('Paperknife.parse fails incorrect mail addresses successfully', async (t) => {
-	t.throws(() => Paperknife.parse('"Marius M." <marius>'));
+    t.throws(() => Paperknife.parse('"Marius M." <marius>'));
 });
