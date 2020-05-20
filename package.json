@@ -1,49 +1,57 @@
 {
-  "name": "@twostairs/paperknife",
-  "version": "1.0.2",
-  "description": "paperknife.js is a RFC 2822 compliant e-mail address parser/validator developed with PEG.js.",
-  "main": "paperknife.js",
-  "scripts": {
-    "compile": "pegjs -o paperknife.js paperknife.pegjs",
-    "test": "ava",
-    "release": "npm run compile && npm run test && npm version patch && git push --all && git push --tags",
-    "update": "ncu -au && npm install && npm run compile && npm run test"
-  },
-  "ava": {
-    "verbose": true
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/twostairs/paperknife.js.git"
-  },
-  "keywords": [
-    "rfc",
-    "2822",
-    "paperknife",
-    "mail",
-    "parser",
-    "validator",
-    "peg"
-  ],
-  "author": {
-    "name": "twostairs",
-    "email": "highfive@twostairs.co",
-    "url": "https://twostairs.co"
-  },
-  "contributors": [
-    {
-      "name": "Marius",
-      "email": "marius@twostairs.co",
-      "url": "https://twostairs.co"
+    "name": "@twostairs/paperknife",
+    "version": "1.0.2",
+    "description": "paperknife.js is a RFC 2822 compliant e-mail address parser/validator developed with PEG.js.",
+    "main": "paperknife.js",
+    "scripts": {
+        "pegjs": "pegjs -o paperknife.js paperknife.pegjs",
+        "uglifyjs": "uglifyjs paperknife.js -o paperknife.min.js -c -m",
+        "compile": "npm run pegjs && npm run uglifyjs",
+        "test": "ava",
+        "release": "npm run compile && npm run test && npm version patch && git push --all && git push --tags && npm publish --access public"
+    },
+    "ava": {
+        "verbose": true
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/twostairs/paperknife.js.git"
+    },
+    "keywords": [
+        "rfc",
+        "2822",
+        "rfc2822",
+        "mail",
+        "email",
+        "address",
+        "mail-address",
+        "email-address",
+        "parser",
+        "validator",
+        "validation",
+        "paperknife",
+        "peg"
+    ],
+    "author": {
+        "name": "twostairs",
+        "email": "highfive@twostairs.co",
+        "url": "https://twostairs.co"
+    },
+    "contributors": [
+        {
+            "name": "Marius",
+            "email": "marius@twostairs.co",
+            "url": "https://twostairs.co"
+        }
+    ],
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/twostairs/paperknife.js/issues"
+    },
+    "homepage": "https://github.com/twostairs/paperknife.js#readme",
+    "devDependencies": {
+        "ava": "^3.8.2",
+        "pegjs": "^0.10.0",
+        "uglify-js": "^3.9.3"
     }
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/twostairs/paperknife.js/issues"
-  },
-  "homepage": "https://github.com/twostairs/paperknife.js#readme",
-  "devDependencies": {
-    "ava": "^1.1.0",
-    "pegjs": "^0.10.0"
-  }
 }
