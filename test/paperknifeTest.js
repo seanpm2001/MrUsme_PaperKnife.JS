@@ -24,3 +24,7 @@ test('Paperknife.parse validates correct mail addresses successfully', async (t)
 	    ]
   	]);
 });
+
+test('Paperknife.parse fails incorrect mail addresses successfully', async (t) => {
+	t.throws(() => Paperknife.parse('"Marius M." <marius>'));
+});
