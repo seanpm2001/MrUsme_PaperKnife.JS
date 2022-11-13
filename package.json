@@ -50,7 +50,7 @@
     },
     "homepage": "https://github.com/twostairs/paperknife.js#readme",
     "devDependencies": {
-        "ava": "^3.8.2",
+        "ava": "^5.0.1",
         "pegjs": "^0.10.0",
         "uglify-js": "^3.9.3"
     }
